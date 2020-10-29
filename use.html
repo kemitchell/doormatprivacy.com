@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="the no-log, no-track privacy policy for websites">
+  <title>How to Use Doormat</title>
+  <link href="styles.css" rel="stylesheet">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Use Doormat">
+  <meta name="twitter:description" content="the no-log, no-track privacy policy for websites">
+  <meta name="twitter:image" content="https://doormatprivacy.com/social-image.png">
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="How to Use Doormat">
+  <meta name="og:description" content="the no-log, no-track privacy policy for websites">
+  <meta name="og:image" content="https://doormatprivacy.com/social-image.png">
+  <meta name="og:site" content="Doormat">
+</head>
+<body>
+  <header role="banner">
+    <h1>Doormat</h1>
+    <p>the no-log, no-track privacy policy for websites</p>
+  </header>
+  <nav role="navigation">
+    <a href="1e">Read</a> <a href="use">Use</a> <a href="feedback">Feedback</a>
+  </nav>
+  <main role="main">
+    <h1>How to Use Doormat</h1>
+    <p class="conspicuous">It’s up to you to read through the policy and make sure it works for your website and your needs. Nobody provides any kind of guarantee. Using Doormat certainly <a href="https://notlegaladvice.law">doesn’t make any of the lawyers or other people who’ve contributed professionally responsible to you</a>.</p>
+    <h2>Privacy Page</h2>
+    <p>To use the Doormat privacy policy for your website, create a privacy page with content based on this template, and link to it from the bottom of every page of your site. Make sure to replace all the {placeholders}.</p>
+    <blockquote>
+      <p>This policy was last updated on {e.g. January 1, 2020}.</p>
+      <p>This website follows the Doormat Privacy Policy at <a href="https://doormatprivacy.com/1e">https://doormatprivacy.com/1e</a>.</p>
+      <p>For questions or comments about privacy, you can contact us {e.g. via e-mail at privacy@example.com}.</p>
+      <p>{Optional:}This website uses the following <dfn>service providers</dfn>: {e.g. "<a href="https://aws.amazon.com/privacy/">Amazon Web Services</a> for server hosting, <a href="https://www.fastly.com/privacy">Fastly</a> for content distribution"}.</p>
+    </blockquote>
+    <p>The first paragraph uses a legal technique called <a href="https://en.wikipedia.org/wiki/Incorporation_by_reference">incorporation by reference</a>.</p>
+    <h2>Server Configuration</h2>
+    <p>You will need to configure your server not to log information about visitors to your website. For example, using <a href="https://nginx.com">NGINX</a>, your configuration file might look like:</p>
+    <pre class="code"># /etc/nginx/sites-available/example.com
+
+server {
+    listen 80;
+    server_name example.com;
+    error_log /dev/null;
+    access_log /dev/null;
+}</pre>
+    <p>If you like, you can also enable IP-based rate limiting:</p>
+    <pre class="code"># /etc/nginx/sites-available/example.com
+
+<mark>limit_req_zone $binary_remote_addr zone=example:10m rate=5r/s;</mark>
+
+server {
+    listen 80;
+    server_name example.com;
+    error_log /dev/null;
+    access_log /dev/null;
+    <mark>limit_req zone=example burst=8 nodelay;</mark>
+}</pre>
+  </main>
+  <footer role="contentinfo">
+    <p>© <a href="https://kemitchell.com">K.E. Mitchell</a></p>
+  </footer>
+</body>
+</html>
