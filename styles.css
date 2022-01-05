@@ -5,29 +5,29 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-header[role=banner],
-main[role=main],
-nav[role=navigation],
-footer[role=contentinfo] {
+body > header,
+body > main,
+body > nav,
+body > footer {
   margin-left: auto;
   margin-right: auto;
   max-width: 33rem;
 }
 
-header[role=banner] {
+body > header {
   text-align: center;
 }
 
-nav[role=navigation] {
+body > nav {
   text-align: center;
 }
 
-nav[role=navigation] a {
+body > nav a {
   display: inline-block;
   margin: 0 0.5rem;
 }
 
-footer[role=contentinfo] {
+body > footer {
   margin-bottom: 3rem;
   margin-top: 2rem;
   text-align: right;
