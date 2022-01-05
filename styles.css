@@ -14,6 +14,19 @@ body > footer {
   max-width: 33rem;
 }
 
+@media print {
+  body > header,
+  body > main,
+  body > footer {
+    margin: 1rem auto;
+    max-width: max-content;
+  }
+
+  body > nav {
+    display: none;
+  }
+}
+
 body > header {
   text-align: center;
 }
