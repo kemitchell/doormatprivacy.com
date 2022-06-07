@@ -1,8 +1,0 @@
-- [ ] Create `{edition}.html`.
-- [ ] Update link in `index.html`.
-- [ ] Add link to `editions.html`.
-- [ ] Update links to latest edition in `<nav>`.
-- [ ] Update links to latest edition in `use.html`.
-- [ ] Archive via Wayback Machine.
-- [ ] Archive via perma.cc.
-- [ ] Add archive links.

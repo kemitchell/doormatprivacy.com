@@ -1,0 +1,8 @@
+- [ ] Create `{version}.html`.
+- [ ] Update link in `index.html`.
+- [ ] Add link to `versions.html`.
+- [ ] Update links to latest version in `<nav>`.
+- [ ] Update links to latest version in `use.html`.
+- [ ] Archive via Wayback Machine.
+- [ ] Archive via perma.cc.
+- [ ] Add archive links.
